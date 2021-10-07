@@ -2,7 +2,7 @@ import { $host } from "./index";
 import jwt_decode from "jwt-decode";
 export const registration = async (email, password) => {
   const { data } = await $host.post(
-    "https://baby-room-shop.herokuapp.com/api/user/registration",
+    "https://babyroom-server.herokuapp.com/api/user/registration",
     {
       email,
       password,
@@ -14,7 +14,7 @@ export const registration = async (email, password) => {
 };
 export const login = async (email, password) => {
   const { data } = await $host.post(
-    "https://baby-room-shop.herokuapp.com/api/user/login",
+    "https://babyroom-server.herokuapp.com/api/user/login",
     {
       email,
       password,
@@ -25,7 +25,7 @@ export const login = async (email, password) => {
 };
 export const check = async () => {
   const { data } = await $host.get(
-    "https://baby-room-shop.herokuapp.com/api/user/auth"
+    "https://babyroom-server.herokuapp.com/api/user/auth"
   );
   localStorage.setItem("token", data.token);
   return jwt_decode(data.token);
